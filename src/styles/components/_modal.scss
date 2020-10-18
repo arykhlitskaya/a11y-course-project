@@ -1,0 +1,94 @@
+// Class to body
+.has-modal {
+    overflow: hidden;
+}
+
+.modal {
+    z-index: $z-index-modal;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.43);
+
+    &.modal--open {
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.modal__dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: $modal-width;
+    max-width: $modal-width;
+    min-height: calc(100% - 60px);
+    margin: 30px auto;
+    pointer-events: none;
+
+    @include media-breakpoint-down(md) {
+        margin: 30px auto;
+        width: 100%;
+        max-width: calc(100% - 30px);
+    }
+
+    @include media-breakpoint-down(sm) {
+        min-height: calc(100% - 30px);
+        margin: 15px;
+    }
+}
+
+.modal__content {
+    position: relative;
+    width: 100%;
+    padding: 70px 150px 85px;
+    background-color: $modal-bg;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+    border-radius: $border-radius;
+    pointer-events: auto;
+
+    @include media-breakpoint-down(md) {
+        padding: 20px 30px 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: 20px 15px 30px;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px;
+    background: 0;
+    border: 0;
+    line-height: 1;
+
+    @include media-breakpoint-down(sm) {
+        top: 10px;
+        right: 10px;
+    }
+
+    &:hover {
+        color: $color-theme-primary;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+
+        @include media-breakpoint-down(sm) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

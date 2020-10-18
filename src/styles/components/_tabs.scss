@@ -1,0 +1,25 @@
+.tab-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li + li {
+        margin-left: 15px;
+    }
+}
+
+.tab-button {
+    &.active {
+        text-decoration: none;
+        background-color: $color-theme-primary-light;
+    }
+}
+
+.tab-panel {
+    padding: 45px 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 20px 0;
+    }
+}

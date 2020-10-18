@@ -1,0 +1,50 @@
+{
+  "name": "a11y-course-project",
+  "version": "1.0.0",
+  "description": "Accessible landing page of the museum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arykhlitskaya/a11y-course-project.git"
+  },
+  "author": "Anna Rykhlitskaya",
+  "license": "ISC",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.1",
+    "gh-pages": "^3.1.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^7.0.35",
+    "postcss-csso": "^4.0.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^9.0.0",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "focus-trap": "^6.1.3"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}

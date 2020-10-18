@@ -1,0 +1,58 @@
+$color-black: #000;
+$color-white: #fff;
+$color-purple: #5d16d5;
+$color-purple-light: #c7d2e9;
+$color-grey-light: #f9f9fb;
+
+$color-theme-text: $color-black;
+$color-theme-bg: $color-white;
+$color-theme-primary: $color-purple;
+$color-theme-primary-light: $color-purple-light;
+
+$font-family: 'Roboto', sans-serif;
+$body-font-size: 22px;
+$body-font-size_sm: 16px;
+$body-line-height: 1.5;
+$border-radius: 8px;
+
+// Focus
+$color-focus: #ab18c4;
+$focus-box-shadow: 0 0 0 3px rgba($color-theme-primary, 0.55);
+$focus-outline: 2px solid $color-focus;
+
+// Layout & breakpoints
+$container-max-width: 1050px;
+$container-padding-x: 15px;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1050px,
+    xl: 1200px,
+);
+
+// Z-index
+$z-index-modal: 999;
+
+// Forms
+$form-font-size: 30px;
+$form-font-size_sm: 16px;
+$form-line-height: 1.13;
+$form-field-color: $color-theme-text;
+$form-field-border-color: $color-purple-light;
+$form-field-border-width: 1px;
+$form-field-bg-color: $color-grey-light;
+$form-field-height: 65px;
+$form-field-padding-x: 20px;
+$form-field-padding-y: 15px;
+$form-label-color: #555;
+
+// Form States
+$form-focus-color: $color-purple;
+
+// Error
+$form-error-color: #ff0000;
+
+// Modal
+$modal-width: 800px;
+$modal-bg: $color-white;
