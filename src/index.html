@@ -39,11 +39,18 @@ maximum-scale=5">
                     </form>
                     <nav class="header__nav-lang" aria-labelledby="langDesc">
                         <span class="visually-hidden" aria-hidden="true" id="langDesc">Выбрать язык</span>
-                        <span class="button button--primary-light active">
-                            <span class="visually-hidden">Русский</span>
-                            <span aria-hidden="true">RU</span>
-                        </span>
-                        <a class="button button--primary-light" href="/en" hreflang="en" aria-label="English">EN</a>
+                        <ul>
+                            <li>
+                                <span class="button button--primary-light active">
+                                    <span class="visually-hidden">Русский</span>
+                                    <span aria-hidden="true">RU</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a class="button button--primary-light" href="/en" hreflang="en" lang="en"
+                                    aria-label="English">EN</a>
+                            </li>
+                        </ul>
                     </nav>
                     <button class="header__login-button button" type="button" data-toggle-modal="loginModal">
                         <span class="visually-hidden">Войти на сайт</span>
@@ -345,7 +352,7 @@ maximum-scale=5">
                 <ul class="footer__social-links">
                     <li>
                         <a href="#" class="social-link">
-                            <span class="visually-hidden">Facebook</span>
+                            <span lang="en" class="visually-hidden">Facebook</span>
                             <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                 focusable="false" aria-hidden="true">
                                 <path
@@ -355,7 +362,7 @@ maximum-scale=5">
                     </li>
                     <li>
                         <a href="#" class="social-link">
-                            <span class="visually-hidden">Telegram</span>
+                            <span lang="en" class="visually-hidden">Telegram</span>
                             <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                 focusable="false" aria-hidden="true">
                                 <path
