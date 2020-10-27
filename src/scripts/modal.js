@@ -39,7 +39,8 @@ export class Modal {
         this.activeElement = document.activeElement;
         this.modal.classList.add(MODAL_OPEN_CLASS);
         document.body.classList.add(BODY_OPEN_CLASS);
-        setFocusOnFirstDescendant(this.modal);
+        this.modal.focus();
+        // setFocusOnFirstDescendant(this.modal);
         this.focusTrap.activate();
         this.hideAllContentForScreenReaders();
         this.addEventListeners();
