@@ -2,7 +2,11 @@
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 25px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 15px;
+    }
 
     li + li {
         margin-left: 15px;
@@ -17,9 +21,17 @@
 }
 
 .tab-panel {
-    padding: 45px 0;
+    padding: 20px 0;
 
     @include media-breakpoint-down(sm) {
-        padding: 20px 0;
+        padding: 10px 0;
+    }
+
+    &:focus {
+        outline-offset: 15px;
+
+        @include media-breakpoint-down(lg) {
+            outline-offset: 10px;
+        }
     }
 }
