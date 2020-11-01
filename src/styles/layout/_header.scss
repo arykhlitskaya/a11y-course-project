@@ -30,8 +30,8 @@
 
 .header__logo {
     img {
-        height: 52px;
         width: auto;
+        height: 52px;
 
         @include media-breakpoint-down(lg) {
             height: 40px;
@@ -41,9 +41,9 @@
 
 .header__actions {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     flex: 1;
+    align-items: center;
+    justify-content: flex-end;
     margin-left: 30px;
 
     @include media-breakpoint-down(md) {
@@ -60,20 +60,13 @@
         margin-left: 15px;
     }
 
-    ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li + li {
-            margin-left: 5px;
-        }
-    }
-
     .button {
         padding: 13px 16px;
         border-radius: 4px;
+
+        + .button {
+            margin-left: 5px;
+        }
 
         @include media-breakpoint-down(lg) {
             padding: 8px;
@@ -99,8 +92,8 @@
     }
 
     svg {
-        height: 2em;
         width: 2em;
+        height: 2em;
     }
 
     @include media-breakpoint-down(lg) {
@@ -116,17 +109,17 @@
         list-style: none;
 
         @include media-breakpoint-down(sm) {
-            margin-top: 30px;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
         }
     }
 }
 
 .header__nav-item {
     max-width: 100%;
-    text-align: center;
     line-height: 1.13;
+    text-align: center;
 
     + .header__nav-item {
         margin-left: 40px;
@@ -137,8 +130,8 @@
     }
 
     a {
-        color: $color-theme-text;
         font-size: 18px;
+        color: $color-theme-text;
         text-decoration: none;
         transition: color 0.15s ease-in-out;
 
@@ -146,9 +139,9 @@
             font-size: 14px;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             color: $color-theme-primary;
+            text-decoration: underline;
         }
     }
 }
@@ -162,8 +155,8 @@
     }
 
     .form-field__input {
-        font-size: 18px;
         padding: 13px 40px 13px 10px;
+        font-size: 18px;
         border-radius: 26px;
 
         @include media-breakpoint-down(md) {
@@ -176,13 +169,13 @@
         top: 50%;
         right: 10px;
         padding: 4px;
-        transform: translateY(-50%);
         line-height: 1;
+        transform: translateY(-50%);
 
         svg {
-            vertical-align: middle;
             width: 20px;
             height: 20px;
+            vertical-align: middle;
         }
     }
 }

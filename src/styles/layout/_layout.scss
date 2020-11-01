@@ -8,10 +8,10 @@ body {
 .container {
     width: 100%;
     max-width: $container-max-width;
-    margin-left: auto;
     margin-right: auto;
-    padding-left: $container-padding-x;
+    margin-left: auto;
     padding-right: $container-padding-x;
+    padding-left: $container-padding-x;
 }
 
 .section-wrapper {

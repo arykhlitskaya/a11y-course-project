@@ -1,5 +1,4 @@
 import { createFocusTrap } from 'focus-trap';
-import { setFocusOnFirstDescendant } from './utils/focus';
 import { KEY_CODE } from './utils/keys';
 
 const BODY_OPEN_CLASS = 'has-modal';
@@ -11,9 +10,6 @@ const EVENT_CLOSE = 'modal.close';
 const EVENT_OPEN = 'modal.open';
 
 let activeModal = null;
-
-// this.eventClose = new Event(EVENT_CLOSE);
-// this.eventOpen = new Event(EVENT_OPEN);
 
 export class Modal {
     constructor(modalID, toggles) {
@@ -40,9 +36,8 @@ export class Modal {
         this.modal.classList.add(MODAL_OPEN_CLASS);
         document.body.classList.add(BODY_OPEN_CLASS);
         this.modal.focus();
-        // setFocusOnFirstDescendant(this.modal);
         this.focusTrap.activate();
-        this.hideAllContentForScreenReaders();
+        // this.hideAllContentForScreenReaders();
         this.addEventListeners();
         this.modal.dispatchEvent(this.eventOpen);
     }
@@ -52,7 +47,7 @@ export class Modal {
         document.body.classList.remove(BODY_OPEN_CLASS);
         activeModal.modal.classList.remove(MODAL_OPEN_CLASS);
         activeModal.focusTrap.deactivate();
-        this.showAllContentForScreenReaders();
+        // this.showAllContentForScreenReaders();
         if (activeModal.activeElement && activeModal.activeElement.focus) {
             activeModal.activeElement.focus();
         }

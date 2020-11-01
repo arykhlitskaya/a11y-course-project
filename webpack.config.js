@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -102,7 +103,7 @@ module.exports = (env, argv) => {
             }),
         ].concat(
             isDevelopment
-                ? [new webpack.HotModuleReplacementPlugin()]
+                ? [new webpack.HotModuleReplacementPlugin(), new StylelintPlugin()]
                 : [
                       new MiniCssExtractPlugin({
                           filename: 'app.[hash].css',

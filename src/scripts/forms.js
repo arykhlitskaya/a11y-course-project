@@ -1,20 +1,21 @@
 const SELECTOR_INPUT_WRAPPER = '.form-field';
 const SELECTOR_INPUT = '.form-field__input';
 const SELECTOR_ERROR = '.form-field__error';
-const CLASS_LABEL_ABOVE = 'form-field__label--above';
+const CLASS_FLOAT_LABEL = 'form-field__float-label';
+const CLASS_FLOAT_LABEL_ABOVE = 'form-field__float-label--above';
 const CLASS_INVALID = 'form-field--invalid';
 const ID_ERROR_ALERT = 'loginFormErorr';
 
-function handleInputChangeEvent(event) {
+function handleInputEvent(event) {
     const target = event.target;
     changeFloatLabelState(target);
 }
 
 function changeFloatLabelState(input) {
     const label = input.labels ? input.labels[0] : null;
-    if (label) {
+    if (label && label.classList.contains(CLASS_FLOAT_LABEL)) {
         const isLabelAbove = input.value || input === document.activeElement;
-        isLabelAbove ? label.classList.add(CLASS_LABEL_ABOVE) : label.classList.remove(CLASS_LABEL_ABOVE);
+        isLabelAbove ? label.classList.add(CLASS_FLOAT_LABEL_ABOVE) : label.classList.remove(CLASS_FLOAT_LABEL_ABOVE);
     }
 }
 
@@ -48,7 +49,9 @@ function resetInvalidState(input) {
 function initInputs() {
     const inputs = document.querySelectorAll(SELECTOR_INPUT);
     [...inputs].forEach((input) => {
-        input.addEventListener('change', handleInputChangeEvent);
+        input.addEventListener('change', handleInputEvent);
+        input.addEventListener('focus', handleInputEvent);
+        input.addEventListener('blur', handleInputEvent);
     });
 }
 

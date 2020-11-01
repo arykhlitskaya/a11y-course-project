@@ -11,8 +11,8 @@
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        grid-column-gap: 20px;
         grid-row-gap: 40px;
+        grid-column-gap: 20px;
     }
 }
 
@@ -22,10 +22,10 @@
 }
 
 .footer__links {
-    list-style: none;
     margin: 0 0 40px;
     padding: 0;
     line-height: 1.2;
+    list-style: none;
 
     li + li {
         margin-top: 16px;
@@ -43,9 +43,9 @@
         }
 
         svg {
-            margin-left: 15px;
             width: 40px;
             height: 40px;
+            margin-left: 15px;
         }
     }
 }
@@ -83,8 +83,8 @@
 
     .button {
         position: absolute;
-        right: 0;
         top: 0;
+        right: 0;
         width: 150px;
         padding: 12px 15px;
         font-size: 18px;
