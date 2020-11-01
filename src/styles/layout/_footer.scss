@@ -1,0 +1,134 @@
+.footer {
+    padding-top: 75px;
+    padding-bottom: 90px;
+    background-color: #f1f1f1;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-row-gap: 40px;
+        grid-column-gap: 20px;
+    }
+}
+
+.footer__title {
+    margin: 0 0 15px;
+    font-size: 24px;
+}
+
+.footer__links {
+    margin: 0 0 40px;
+    padding: 0;
+    line-height: 1.2;
+    list-style: none;
+
+    li + li {
+        margin-top: 16px;
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        font-size: 18px;
+        color: $color-theme-text;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+        }
+    }
+}
+
+.footer__social-links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li {
+        margin-left: 25px;
+    }
+}
+
+.social-link {
+    $color: #121212;
+
+    display: inline-block;
+    color: $color;
+
+    &:hover {
+        color: rgba($color, 0.8);
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+    }
+}
+
+.subscribe-form__inner {
+    position: relative;
+
+    .button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        padding: 12px 15px;
+        font-size: 18px;
+
+        @include media-breakpoint-down(sm) {
+            width: 120px;
+            padding: 10px 10px;
+            font-size: 14px;
+        }
+    }
+
+    .form-checkbox {
+        margin-top: 16px;
+        font-size: 16px;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 14px;
+        }
+    }
+}
+
+.subscribe-form__email {
+    display: block;
+    margin-right: 170px;
+
+    @include media-breakpoint-down(sm) {
+        margin-right: 135px;
+    }
+
+    .form-field__input {
+        padding: 12px 2px;
+        font-size: 18px;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $color-black;
+        border-radius: 0;
+
+        @include media-breakpoint-down(sm) {
+            padding: 10px 2px;
+            font-size: 16px;
+        }
+
+        &:focus {
+            border-bottom-color: $color-theme-primary;
+        }
+    }
+}

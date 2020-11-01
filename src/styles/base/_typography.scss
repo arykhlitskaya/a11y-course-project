@@ -1,0 +1,71 @@
+body {
+    font-family: $font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    color: $color-theme-text;
+    background-color: $color-theme-bg;
+
+    @include media-breakpoint-down(sm) {
+        font-size: $body-font-size_sm;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.9em;
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.18;
+}
+
+h1 {
+    font-size: 60px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 30px;
+    }
+}
+
+h2 {
+    font-size: 50px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 26px;
+    }
+}
+
+h3 {
+    font-size: 26px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 22px;
+    }
+}
+
+a {
+    color: $color-theme-primary;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.link-read-more {
+    color: $color-theme-text;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

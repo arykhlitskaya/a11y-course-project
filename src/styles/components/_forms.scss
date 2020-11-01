@@ -1,0 +1,145 @@
+.form-field {
+    position: relative;
+    margin: 60px 0;
+
+    @include media-breakpoint-down(sm) {
+        margin: 40px 0;
+    }
+}
+
+.form-field__input,
+.form-field__float-label,
+.form__submit {
+    font-size: $form-font-size;
+    font-weight: 400;
+    line-height: $form-line-height;
+
+    @include media-breakpoint-down(sm) {
+        font-size: $form-font-size_sm;
+    }
+}
+
+.form-field__input,
+.form__submit {
+    padding: $form-field-padding-y $form-field-padding-x;
+}
+
+.form-field__input {
+    display: block;
+    width: 100%;
+    color: $form-field-color;
+    background-color: $form-field-bg-color;
+    border: $form-field-border-width solid $form-field-border-color;
+    border-radius: $border-radius;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+        border-color: $form-focus-color;
+        outline: none;
+        box-shadow: $focus-box-shadow;
+    }
+}
+
+.form-field__float-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5px;
+    color: $form-label-color;
+    transform: translate($form-field-padding-x - 5, $form-field-padding-y - $form-field-border-width);
+    transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.form-field__float-label--above {
+    color: $color-theme-text;
+    transform: translate(0, -125%);
+}
+
+.form-field--invalid {
+    .form-field__input {
+        color: $form-error-color;
+        border-color: $form-error-color;
+
+        &:focus {
+            box-shadow: 0 0 0 3px rgba($form-error-color, 0.25);
+
+            ~ .form-field__float-label {
+                color: $form-error-color;
+            }
+        }
+    }
+
+    .form-field__float-label {
+        color: $form-error-color;
+    }
+}
+
+.form-field__error {
+    padding-top: 5px;
+    font-size: 18px;
+    color: $form-error-color;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+
+    &:not([hidden]) {
+        display: inline-block;
+    }
+}
+
+// Custom checkbox
+.form-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2em;
+    padding-left: 2em;
+    line-height: 1.2;
+
+    input[type='checkbox'] {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        opacity: 0;
+
+        &:focus ~ .form-checkbox__label::before {
+            box-shadow: $focus-box-shadow;
+        }
+
+        &:checked ~ .form-checkbox__label::after {
+            display: block;
+        }
+    }
+}
+
+.form-checkbox__label {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.25em;
+        left: 0;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #fff;
+        border: 1px solid $color-black;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0.35em;
+        left: 0.5em;
+        display: none;
+        width: 0.5em;
+        height: 1em;
+        border: solid $color-theme-primary;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}

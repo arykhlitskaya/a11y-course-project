@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $container-padding-x;
+    padding-left: $container-padding-x;
+}
+
+.section-wrapper {
+    + .section-wrapper {
+        margin-top: 120px;
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 60px;
+        }
+    }
+}
+
+main {
+    padding-top: 20px;
+    padding-bottom: 160px;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+}

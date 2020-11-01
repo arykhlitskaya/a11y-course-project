@@ -1,0 +1,37 @@
+.tab-list {
+    display: flex;
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 15px;
+    }
+
+    li + li {
+        margin-left: 15px;
+    }
+}
+
+.tab-button {
+    &.active {
+        text-decoration: none;
+        background-color: $color-theme-primary-light;
+    }
+}
+
+.tab-panel {
+    padding: 20px 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 10px 0;
+    }
+
+    &:focus {
+        outline-offset: 15px;
+
+        @include media-breakpoint-down(lg) {
+            outline-offset: 10px;
+        }
+    }
+}
